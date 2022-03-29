@@ -1,6 +1,8 @@
-import React from "react";
+import React from 'react';
+import Progress from '../ProgressCircle/ProgressCircle.js';
+import './main.css';
 
-class PlacesCounter extends React.Component {
+export default class OccupancyCounter extends React.Component {
 
   constructor(props) {
     super(props);
@@ -88,16 +90,48 @@ class PlacesCounter extends React.Component {
     this.warningMessage.style.display = 'none';
   }
 
+  /**
+   * get the % of occupied sits with one decimal
+   * @returns number
+   */
+  progress(decimal) {
+    return (this.state.counter / this.max * 100).toFixed(decimal);
+  }
+
   render() {
     return <div className="places-counter">
-      <h2>Compteur de places</h2>
-      <div>Nombre de places max: {this.max}</div>
-      <div>Nombre de places utilisées: {this.state.counter}</div>
+      <header class="title">
+        Compteur de places
+      </header>
+      <section class="badges">
+        <div className="item">
+          <div class="label">Occupées</div>
+          <div class="value">{this.state.counter}</div>
+        </div>
+        <div className="item">
+          <div class="label">Libres</div>
+          <div class="value">{this.max - this.state.counter}</div>
+        </div>
+        <div className="item">
+          <div class="label">Total</div>
+          <div class="value">{this.max}</div>
+        </div>
+      </section>
+      <div class="content">
+        <section className="progress">
+          <Progress
+            strokeWidth="10"
+            sqSize="100"
+            percentage={this.progress()} />
+        </section>
+        {/* <section className="progress">{this.progress(1)} %</section> */}
+        <div className="buttons">
+          <button className="add-btn">+</button>
+          <button className="remove-btn">-</button>
+        </div>
+      </div>
       <div className="warning-msg">La salle est pleine</div>
-      <button className="add-btn">+</button>
-      <button className="remove-btn">-</button>
+      <p>add reset button</p>
     </div>
   }
 }
-
-export default PlacesCounter;
