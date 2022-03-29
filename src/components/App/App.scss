@@ -1,21 +1,36 @@
-header {
-  display: flex;
-  justify-content: center;
-  background-color: #282c34;
-  color: white;
-
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-header .logo {
-  height: 10vmin;
-  pointer-events: none;
-  align-self: center;
+.App {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #282c34;
+    color: white;
+    .logo {
+      height: 10vmin;
+      pointer-events: none;
+      align-self: center;
+    }
+    .description {
+      line-height: 10vmin;
+      font-size: 1.2rem;
+    } 
+  }
+  // component container 
+  section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 }
-
-header .description {
-  line-height: 10vmin;
-  font-size: 1.4rem;
-} 
 
 @media (prefers-reduced-motion: no-preference) {
   header .logo {
