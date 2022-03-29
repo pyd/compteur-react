@@ -1,19 +1,30 @@
-.App {
-  text-align: center;
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #282c34;
+  color: white;
+
 }
 
-.App-logo {
-  height: 40vmin;
+header .logo {
+  height: 10vmin;
   pointer-events: none;
+  align-self: center;
 }
+
+header .description {
+  line-height: 10vmin;
+  font-size: 1.4rem;
+} 
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  header .logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+// keep it for font-size calculation
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,11 +33,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
