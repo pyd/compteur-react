@@ -1,25 +1,24 @@
 $bg-dark: #282c34;
-
+// TODO afficher le header sur la  gauche de l'écran (1/3) en mode paysage
 * {
   box-sizing:borderbox;
   margin:0;
   padding:0;
 }
 
-//TODO remove this red
 #app {
-  color: red;
   display:flex;
   flex-direction: column;
   min-height:100vh;
   color: white;
 }
 
-header {
+.appHeader {
   height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   background-color: $bg-dark;
 }
 
@@ -30,24 +29,20 @@ header {
 }
 
 .description {
-  line-height: 10vmin;
   font-size: 1.2rem;
   color: white;
 }
 
 .main {
   display:flex;
-  flex-direction:column;
   flex:1;
   justify-content: center;
   align-items: center;
 }
 
-//TODO remove this background-color
 .componentContainer {
     height: 300px;
-    width: 100px;
-    // background-color: gray;
+    width: 300px;
 }
 
 // in the header, the react logo is rotating

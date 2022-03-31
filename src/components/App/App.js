@@ -6,7 +6,7 @@ import Counter from '../Counter/Counter';
 function App() {
   return (
     <div id={styles.app}> 
-        <header>
+        <header className={styles.appHeader}>
             <img src={logo} className={styles.logo} alt="react logo" />
             <p className={styles.description}>
             Component : Compteur d'occupation d'une salle

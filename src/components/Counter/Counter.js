@@ -98,7 +98,7 @@ export default class OccupancyCounter extends React.Component {
   render() {
     return <div className={styles.counterContainer}>
 
-      <header>
+      <header className={styles.counterHeader}>
         Compteur de places
       </header>
       
@@ -129,8 +129,8 @@ export default class OccupancyCounter extends React.Component {
           </div>
 
           <div className={styles.buttons}>
-            <button ref={this.incrementBtn} className="add-btn">+</button>
-            <button ref={this.decrementBtn} className="rm-btn">-</button>
+            <button ref={this.incrementBtn} className={styles.counterButton}>+</button>
+            <button ref={this.decrementBtn} className={styles.counterButton}>-</button>
           </div>
           
         </div>
