@@ -1,5 +1,5 @@
 import React from 'react';
-import Progress from '../ProgressCircle/ProgressCircle.js';
+import Progress from '../CircularProgressBar/index';
 import styles from './Counter.module.css';
 
 //TODO rename this component
