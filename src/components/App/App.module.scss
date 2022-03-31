@@ -1,0 +1,65 @@
+$bg-dark: #282c34;
+
+* {
+  box-sizing:borderbox;
+  margin:0;
+  padding:0;
+}
+
+#app {
+  color: red;
+  display:flex;
+  flex-direction: column;
+  min-height:100vh;
+  color: white;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $bg-dark;
+}
+
+.logo {
+  height: 10vmin;
+  pointer-events: none;
+  align-self: center;
+}
+
+.description {
+  line-height: 10vmin;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.main {
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+}
+
+.componentContainer {
+    height: 300px;
+    width: 100px;
+    background-color: gray;
+}
+
+// in the header, the react logo is rotating
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+  animation: AppLogoSpin infinite 20s linear;
+  }
+}
+
+@keyframes AppLogoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
