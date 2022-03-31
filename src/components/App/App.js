@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
-import OccupancyCounter from '../OccupancyCounter/OccupancyCounter';
+import Counter from '../Counter/Counter';
 
 //TODO utiliser une classe à la place d'une fonction
 function App() {
@@ -13,7 +13,7 @@ function App() {
             </p>    
         </header> 
         <div className={styles.main}>
-            <div className={styles.componentContainer}><OccupancyCounter max="12" /></div>
+            <div className={styles.componentContainer}><Counter max="12" /></div>
         </div>
     </div>   
   );

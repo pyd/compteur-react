@@ -6,6 +6,7 @@ $bg-dark: #282c34;
   padding:0;
 }
 
+//TODO remove this red
 #app {
   color: red;
   display:flex;
@@ -42,10 +43,11 @@ header {
   align-items: center;
 }
 
+//TODO remove this background-color
 .componentContainer {
     height: 300px;
     width: 100px;
-    background-color: gray;
+    // background-color: gray;
 }
 
 // in the header, the react logo is rotating

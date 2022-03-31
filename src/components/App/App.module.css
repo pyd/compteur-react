@@ -69,7 +69,6 @@ header {
 .componentContainer {
   height: 300px;
   width: 100px;
-  background-color: gray;
 }
 
 @media (prefers-reduced-motion: no-preference) {
