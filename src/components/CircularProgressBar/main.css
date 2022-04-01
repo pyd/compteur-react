@@ -9,11 +9,11 @@
 }
 
 .circle-background {
-  stroke: #ffffff;
+  stroke: rgb(240, 243, 245);
 }
 
 .circle-progress {
-  stroke: rgb(5, 59, 73);
+  stroke: rgb(248, 3, 64);
   stroke-linecap: round;
   stroke-linejoin: round;
 }

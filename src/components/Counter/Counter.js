@@ -44,9 +44,9 @@ export default class OccupancyCounter extends React.Component {
     // handle room limits
     if (count === this.max) {
       this.roomFull = true;
-      this.addButton.disabled = true;
+      this.incrementBtn.current.disabled = true;
     } else {
-      this.rmButton.disabled = false;
+      this.decrementBtn.current.disabled = false;
     }
   }
   
@@ -69,16 +69,13 @@ export default class OccupancyCounter extends React.Component {
     // handle room limits
     if (count === 0) {
       this.roomEmpty = true;
-      this.rmButton.disabled = true;
+      this.decrementBtn.current.disabled = true;
     } else {
-      this.addButton.disabled = false;
+      this.incrementBtn.current.disabled = false;
     }
   }
   
   componentDidMount() {
-    // this.container = document.querySelector('.counter-container');
-    // this.addButton = this.container.querySelector('.add-btn');
-    // this.rmButton = document.querySelector('.rm-btn');
     this.incrementBtn.current.addEventListener('click', (e) => {
       this.increment(e);
     })
@@ -126,6 +123,7 @@ export default class OccupancyCounter extends React.Component {
               strokeWidth="20"
               sqSize="160"
               percentage={this.progress(1)} />
+              {/* <button className={styles.resetButton}>R</button> */}
           </div>
 
           <div className={styles.buttons}>

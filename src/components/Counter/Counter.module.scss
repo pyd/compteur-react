@@ -27,7 +27,9 @@ $bg-dark: #282c34;
 
 .content {
   padding: 10px 6px;
-  background-color:rgb(186, 189, 10);
+  background-color: white;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .counters {
@@ -41,23 +43,23 @@ $bg-dark: #282c34;
 .countersItem {
   flex-grow: 0;
   flex-basis: 32%;
+  background-color: white;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 1px 1px lightgray;
 }
 
 .countersLabel {
-  background-color: white;
   text-align: center;
   border-bottom: 1px solid $bg-dark;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 }
 
 .countersValue {
-  background-color: white;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
 }
 
 // width: progress 66% + gap 2% + buttons 32% (buttons are aligned with the total counter above)
@@ -68,12 +70,21 @@ $bg-dark: #282c34;
   margin-top: 14px;
 }
 
-
 .progress {
+  position: relative;
   text-align: center;
   height: 160px;
   flex-basis: 66%;
 }
+
+// .resetButton {
+//   position: absolute;
+//   bottom: 0;
+//   right: 4px;
+//   height: 26px;
+//   width: 26px;
+//   border-radius: 50%;
+// }
 
 .buttons {
   display: flex;
@@ -82,15 +93,18 @@ $bg-dark: #282c34;
   width: 32%;
   align-items: center;
 }
+
 .counterButton {
   height: 76px;
   width: 76px;
   font-size: 3rem;
   font-weight: bold;
   color: black;
+  font-family: sans-serif;
+  box-shadow: 1px 1px lightgray;
 
   &:disabled {
-    background-color: red;
+    opacity: .3;
   }
 }
 

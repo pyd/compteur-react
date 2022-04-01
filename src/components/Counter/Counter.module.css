@@ -30,7 +30,9 @@
 
 .content {
   padding: 10px 6px;
-  background-color: #babd0a;
+  background-color: white;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .counters {
@@ -54,23 +56,24 @@
           flex-grow: 0;
   -ms-flex-preferred-size: 32%;
       flex-basis: 32%;
+  background-color: white;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: 1px 1px lightgray;
+          box-shadow: 1px 1px lightgray;
 }
 
 .countersLabel {
-  background-color: white;
   text-align: center;
   border-bottom: 1px solid #282c34;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 }
 
 .countersValue {
-  background-color: white;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
 }
 
 .main {
@@ -86,6 +89,7 @@
 }
 
 .progress {
+  position: relative;
   text-align: center;
   height: 160px;
   -ms-flex-preferred-size: 66%;
@@ -113,9 +117,12 @@
   font-size: 3rem;
   font-weight: bold;
   color: black;
+  font-family: sans-serif;
+  -webkit-box-shadow: 1px 1px lightgray;
+          box-shadow: 1px 1px lightgray;
 }
 
 .counterButton:disabled {
-  background-color: red;
+  opacity: .3;
 }
 /*# sourceMappingURL=Counter.module.css.map */

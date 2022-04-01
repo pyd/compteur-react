@@ -15,6 +15,7 @@
           flex-direction: column;
   min-height: 100vh;
   color: white;
+  background-color: #b6c8b6;
 }
 
 .appHeader {
