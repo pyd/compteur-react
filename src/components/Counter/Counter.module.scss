@@ -77,14 +77,19 @@ $bg-dark: #282c34;
   flex-basis: 66%;
 }
 
-// .resetButton {
-//   position: absolute;
-//   bottom: 0;
-//   right: 4px;
-//   height: 26px;
-//   width: 26px;
-//   border-radius: 50%;
-// }
+.resetButton {
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  
+  &:hover {
+    background-color: rgb(164, 237, 240);
+    cursor: pointer;
+  }
+}
 
 .buttons {
   display: flex;
@@ -94,6 +99,7 @@ $bg-dark: #282c34;
   align-items: center;
 }
 
+//TODO add cursor on hover
 .counterButton {
   height: 76px;
   width: 76px;

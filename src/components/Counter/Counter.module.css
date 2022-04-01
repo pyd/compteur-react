@@ -96,6 +96,20 @@
       flex-basis: 66%;
 }
 
+.resetButton {
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+}
+
+.resetButton:hover {
+  background-color: #a4edf0;
+  cursor: pointer;
+}
+
 .buttons {
   display: -webkit-box;
   display: -ms-flexbox;

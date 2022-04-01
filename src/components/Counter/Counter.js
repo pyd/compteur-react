@@ -23,6 +23,7 @@ export default class OccupancyCounter extends React.Component {
     this.state = {counter: 0};
     this.incrementBtn = React.createRef();  // use this.incrementBtn.current to get the element
     this.decrementBtn = React.createRef();
+    this.resetBtn = React.createRef();
   }
 
   /**
@@ -56,7 +57,7 @@ export default class OccupancyCounter extends React.Component {
    * @returns 
    */
   decrement(e) {
-    
+    //TODO move it to componentDidMount hook
     e.preventDefault();  
     // room is empty, cannot remove one, skiop execution
     if (this.roomEmpty) return;
@@ -74,13 +75,24 @@ export default class OccupancyCounter extends React.Component {
       this.incrementBtn.current.disabled = false;
     }
   }
-  
+
+  /**
+   * set counter to 0
+   */
+  resetCounter() {
+    this.setState({counter: 0});
+  }
+
   componentDidMount() {
     this.incrementBtn.current.addEventListener('click', (e) => {
       this.increment(e);
     })
     this.decrementBtn.current.addEventListener('click', (e) => {
       this.decrement(e);
+    })
+    this.resetBtn.current.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.resetCounter();
     })
   }
 
@@ -123,7 +135,7 @@ export default class OccupancyCounter extends React.Component {
               strokeWidth="20"
               sqSize="160"
               percentage={this.progress(1)} />
-              {/* <button className={styles.resetButton}>R</button> */}
+              <button ref={this.resetBtn} className={styles.resetButton}>R</button>
           </div>
 
           <div className={styles.buttons}>
