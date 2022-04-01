@@ -10,7 +10,7 @@ import styles from './Counter.module.css';
  * 2 buttons to add or remove one unit
  * 
  */
-export default class OccupancyCounter extends React.Component {
+export default class Counter extends React.Component {
 
   constructor(props) {
     super(props);
