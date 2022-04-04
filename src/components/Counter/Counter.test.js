@@ -8,7 +8,7 @@ jest.mock('../CircularProgressBar', () => (props) => {
   return <mock-childCOmponent />;
 })
 
-describe.skip('check component initial state', () => {
+describe('check component initial state', () => {
   
   // the props.max value will change in each test
   let randomMax = 0
@@ -73,7 +73,7 @@ describe.skip('check component initial state', () => {
   })
 });
 
-describe.skip('check click on the increment button', () => {
+describe('check click on the increment button', () => {
 
   // the props.max value will change in each test
   let randomMax = 0
@@ -90,9 +90,9 @@ describe.skip('check click on the increment button', () => {
   })
   
   test("the value displayed by the 'free counter' is reduced by one", () => {
-    const {container} = render(<Counter max={randomMax} />);
+    const {container} = render(<Counter max="45" taken="10"/>);
     container.querySelector('[data-test="btn-add"]').click();
-    expect(container.querySelector('[data-test="free-count"]').textContent).toBe((Number(randomMax) - 1).toString());
+    expect(container.querySelector('[data-test="free-count"]').textContent).toBe("34");
   })
   
   test("the value displayed by the 'taken counter' is incremented by one", () => {
@@ -130,33 +130,41 @@ describe.skip('check click on the increment button', () => {
 
 describe('check click on the decrement button', () => {
 
-  // the props.max value will change in each test
-  // let randomMax = 0;
-  // let container = null
-  
-  // beforeEach(() => {
-  //   randomMax = Math.floor(Math.random() * 100).toString();
-  // })
-
-  // test("the value displayed by the 'max counter' remains the same", () => {
-  //   const {container} = render(<Counter max="114" taken="31" />);
-  //   container.querySelector('[data-test="btn-rm"]').click();
-  //   expect(container.querySelector('[data-test="max-count"]').textContent).toBe("114");
-  // })
-PROBLEME ICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  test("the value displayed by the 'free counter' is incremented by one", () => {
-    const {container} = render(<Counter max="20" taken="10"/>);
-    expect(container.querySelector('[data-test="free-count"]').textContent).toBe("10");
+  test("the value displayed by the 'max counter' remains the same", () => {
+    const {container} = render(<Counter max="114" taken="31" />);
     container.querySelector('[data-test="btn-rm"]').click();
-    expect(container.querySelector('[data-test="free-count"]').textContent).toBe("11");
-    // const {container} = render(<Counter max="20" taken="15" />);
-    // container.querySelector('[data-test="btn-rm"]').click();  
-    // expect(container.querySelector('[data-test="free-count"]').textContent).toBe("6");
+    expect(container.querySelector('[data-test="max-count"]').textContent).toBe("114");
   })
 
-  // test("the value displayed by the 'taken counter' is decremented by one", () => {
-  //   const {container} = render(<Counter max="56" taken="29" />);
-  //   container.querySelector('[data-test="btn-rm"]').click();
-  //   expect(container.querySelector('[data-test="taken-count"]').textContent).toBe("27");
-  // })
+  test("the value displayed by the 'taken counter' is decremented by one", () => {
+    const {container} = render(<Counter max="20" taken="10"/>);
+    expect(container.querySelector('[data-test="taken-count"]').textContent).toBe("10");
+    container.querySelector('[data-test="btn-rm"]').click();
+    expect(container.querySelector('[data-test="taken-count"]').textContent).toBe("9");
+  })
+
+  test("the value displayed by the 'free counter' is incremented by one", () => {
+    const {container} = render(<Counter max="50" taken="25"/>);
+    expect(container.querySelector('[data-test="free-count"]').textContent).toBe("25");
+    container.querySelector('[data-test="btn-rm"]').click();
+    expect(container.querySelector('[data-test="free-count"]').textContent).toBe("26");
+  })
+
+  test("the child component 'CircularProgressBar' is refreshed with the new percentage", () => {
+    const {container} = render(<Counter max="10" taken="7" />);
+    const calculatePercentage = ((7 / 10) * 100).toFixed(1);
+    container.querySelector('[data-test="btn-rm"]').click();
+    expect(mockCircularProgressBar).toHaveBeenCalledWith(
+      expect.objectContaining({
+        percentage: calculatePercentage.toString()
+      })
+    );
+  })
+
+  test.skip('the decrement button is disabled if counter min is reached', () => {
+
+  })
+  test.skip('the increment button is disabled if counter max is reached', () => {
+    // put it in teste related to increment button
+  })
 })

@@ -33,9 +33,9 @@ export default class Counter extends React.Component {
       this.name = this.props.name;
     };
     // flag to skip execution of increment() when max is reached
-    this.roomFull = false;
+    this.roomFull = (Number(props.taken) === Number(props.max)) ? true : false;
     // flag to skip execution of decrement() when 0 is reached
-    this.roomEmpty = true;
+    this.roomEmpty = (Number(props.taken) === 0) ? true : false;
     // count number of people in the hall
     this.state = {taken: Number(props.taken)};
     this.incrementBtn = React.createRef();  // use this.incrementBtn.current to get the element
