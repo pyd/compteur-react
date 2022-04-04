@@ -1,0 +1,6 @@
+import { render, screen } from '@testing-library/react';
+import Progress from './index';
+
+test('to implement', () => {
+  expect(1)
+});
