@@ -1,7 +1,7 @@
 import React from "react";
 import './main.css';
 
-export default class ProgressCircle extends React.Component {
+export default class CircularProgessBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -61,7 +61,7 @@ export default class ProgressCircle extends React.Component {
   }
 }
 
-ProgressCircle.defaultProps = {
+CircularProgessBar.defaultProps = {
   sqSize: 200,
   percentage: 25,
   strokeWidth: 10
