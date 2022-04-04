@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/compteur-react/static/css/main.e3591cfe.css",
-    "main.js": "/compteur-react/static/js/main.ba06f319.js",
+    "main.css": "/compteur-react/static/css/main.6fa25205.css",
+    "main.js": "/compteur-react/static/js/main.1da1d01a.js",
     "static/js/787.c2073925.chunk.js": "/compteur-react/static/js/787.c2073925.chunk.js",
     "static/media/logo.svg": "/compteur-react/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/compteur-react/index.html",
-    "main.e3591cfe.css.map": "/compteur-react/static/css/main.e3591cfe.css.map",
-    "main.ba06f319.js.map": "/compteur-react/static/js/main.ba06f319.js.map",
+    "main.6fa25205.css.map": "/compteur-react/static/css/main.6fa25205.css.map",
+    "main.1da1d01a.js.map": "/compteur-react/static/js/main.1da1d01a.js.map",
     "787.c2073925.chunk.js.map": "/compteur-react/static/js/787.c2073925.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3591cfe.css",
-    "static/js/main.ba06f319.js"
+    "static/css/main.6fa25205.css",
+    "static/js/main.1da1d01a.js"
   ]
 }
